@@ -18,12 +18,16 @@ public class ConsultarPedidoCommand implements Command {
 		int id = Integer.parseInt(request.getParameter("id"));
 		Pedido pedido = null;
 		try {
+			//Envia o pedido com base no id
 			pedido = base.get(id);
 			request.setAttribute("pedido", pedido);
-			request.getRequestDispatcher("consultarPedido.jsp").forward(request, response);
+			if(pedido == null) {
+				request.setAttribute("erro", "Erro na consulta");
+			}
 		}catch(Exception ex){
 			ex.printStackTrace();
 		}
+		request.getRequestDispatcher("consultarPedido.jsp").forward(request, response);
 		return null;
 	}
 

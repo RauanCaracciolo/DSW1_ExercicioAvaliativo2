@@ -34,7 +34,7 @@ public class Adm extends HttpServlet {
 	}
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	String action = request.getParameter("action");
-        String redirectPage = "index.jsp";
+    	//Envia a requisição e o parametro para a factory de Command
         CommandFactory.getCommand(action, request, response).execute(request, response);
     }   
 

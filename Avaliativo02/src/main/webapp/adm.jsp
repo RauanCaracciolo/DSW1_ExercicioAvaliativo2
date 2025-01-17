@@ -14,6 +14,7 @@
 	<a href="alterarPedido.jsp">Alterar pedido</a><br>
 	<a href="consultarPedido.jsp">Consultar pedido</a><br>
 	<a href="relatorioGeral.jsp">Gerar relatorio de todos os pedidos</a><br>
-	<a href="relatorioCliente.jsp">Relatorio de cliente especifico</a>
+	<a href="relatorioCliente.jsp">Relatorio de cliente especifico</a><br>
+	<a href="Adm?action=logout">Logout</a>
 </body>
 </html>

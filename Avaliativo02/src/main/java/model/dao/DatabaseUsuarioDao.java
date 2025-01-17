@@ -6,6 +6,7 @@ import model.dao.conection.DatabaseConection;
 import model.entity.Usuario;
 
 public class DatabaseUsuarioDao implements UsuarioDao{
+	//Criação de usuario
 	@Override
 	public boolean create(Usuario user) {
 		if(user != null) {
@@ -30,6 +31,7 @@ public class DatabaseUsuarioDao implements UsuarioDao{
 			return false;
 		}
 	}
+	//Pega a senha do usuario pelo login dele
 	public String get(String login) {
 		String retorno = null;
 		var sql = "SELECT senha FROM Usuario WHERE login = ?";

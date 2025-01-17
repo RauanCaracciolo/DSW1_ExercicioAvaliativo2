@@ -10,7 +10,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="Adm?action=relatorioGeral"><button>Gerar relatorio</button></a>
+<a href="Adm?action=relatorioGeral"><button>Gerar relatorio</button></a><br>
 <%
 	List<Pedido> pedidos = (List<Pedido>) request.getAttribute("lista");
 	if(pedidos!= null){
@@ -24,5 +24,7 @@
 	}
 
 %>
+	<a href="adm.jsp">Voltar a tela de admim</a>
+
 </body>
 </html>

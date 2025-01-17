@@ -17,6 +17,7 @@ public class RelatorioGeralCommand implements Command {
 			throws ServletException, IOException {
 		List<Pedido> lista = null;
 		try {
+			//Requisita para o model todos os pedidos e envia pra jsp
 			lista = base.geralRelatory();
 			request.setAttribute("lista", lista);
 			request.getRequestDispatcher("relatorioGeral.jsp").forward(request, response);

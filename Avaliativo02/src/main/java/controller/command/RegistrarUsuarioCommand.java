@@ -10,13 +10,14 @@ import model.entity.Usuario;
 
 public class RegistrarUsuarioCommand implements Command {
 	private DatabaseUsuarioDao base = new DatabaseUsuarioDao();
-
+	
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String login = request.getParameter("login");
 		String senha = request.getParameter("senha");
 		try {
+			//Registra o usuario
 			base.create(new Usuario(login, senha));
 		}catch(Exception ex) {
 			ex.printStackTrace();

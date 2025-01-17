@@ -16,6 +16,7 @@ public class LoginCommand implements Command{
 		String login = request.getParameter("login");
 		String senha = request.getParameter("senha");
 		if(senha.equals(base.get(login))) {
+			//Cria a sessão, caso o login esteja correto.
 			HttpSession session = request.getSession();
 			session.setAttribute("user", login);
 			session.setMaxInactiveInterval(5 * 60);

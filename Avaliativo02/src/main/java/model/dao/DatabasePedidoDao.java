@@ -9,6 +9,7 @@ import model.dao.conection.DatabaseConection;
 import model.entity.Pedido;
 
 public class DatabasePedidoDao implements PedidoDao{
+	//Cria um pedido
 	@Override
 	public boolean create(Pedido pedido) {
 		if(pedido != null) {
@@ -36,6 +37,7 @@ public class DatabasePedidoDao implements PedidoDao{
 			return false;
 		}
 	}
+	//Deleta um pedido do BD
 	@Override
 	public void delete(int id) {
 		var sql = "DELETE FROM Pedido WHERE idpedidos = ?";
@@ -50,6 +52,7 @@ public class DatabasePedidoDao implements PedidoDao{
 			ex.printStackTrace();
 		}		
 	}
+	//Altera um pedido com base em seu ID, mudando todos os seus parametros exceto o proprio id
 	@Override
 	public void alter(int id, Pedido pedido) {
 		if(pedido != null) {
@@ -73,6 +76,7 @@ public class DatabasePedidoDao implements PedidoDao{
 		}
 		
 	}
+	//Retorna uma lista de todos os pedidos
 	@Override
 	public List<Pedido> geralRelatory() {
 		var sql = "SELECT *  FROM Pedido";
@@ -92,6 +96,7 @@ public class DatabasePedidoDao implements PedidoDao{
 		}
 		return retorno;
 	}
+	//Retorna uma lista de pedidos feitos por um cliente, acha pelo nome do cliente
 	@Override
 	public List<Pedido> clientRelatory(String cliente) {
 		var sql = "SELECT *  FROM Pedido WHERE nomeCliente = ?";
@@ -112,7 +117,7 @@ public class DatabasePedidoDao implements PedidoDao{
 		}
 		return retorno;
 	}
-		
+	//Retorna um pedido completo com base em seu ID
 	@Override
 	public Pedido get(int id) {
 		var sql = "SELECT nomeCliente, enderecoEntrega, valor, descricao  FROM Pedido WHERE idpedidos = ?";
@@ -140,5 +145,4 @@ public class DatabasePedidoDao implements PedidoDao{
 		}
 		return null;
 	}
-
 }

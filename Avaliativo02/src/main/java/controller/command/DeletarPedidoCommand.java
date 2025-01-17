@@ -16,6 +16,7 @@ public class DeletarPedidoCommand implements Command {
 
 		int id = Integer.parseInt(request.getParameter("id"));
 		try {
+			//Deleta o pedido com base no id
 			base.delete(id);
 			response.sendRedirect("deletarPedido.jsp");
 		}catch(Exception ex) {

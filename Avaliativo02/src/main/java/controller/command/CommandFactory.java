@@ -8,6 +8,7 @@ public class CommandFactory {
 		if(action == null || action.isEmpty()) {
 			return new DefaultCommand();
 		}else {
+			//Com base na ação, retorna um comando diferente
 			switch(action) {
 				case "login":{
 					return new LoginCommand();
@@ -32,6 +33,9 @@ public class CommandFactory {
 				}
 				case "relatorioGeral":{
 					return new RelatorioGeralCommand();
+				}
+				case "relatorioCliente":{
+					return new RelatorioClienteCommand();
 				}
 				default:{
 					return new DefaultCommand();

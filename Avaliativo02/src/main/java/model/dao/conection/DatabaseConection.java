@@ -5,7 +5,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DatabaseConection {
-	private static String URL = "jdbc:mysql://localhost:3307/Avaliativo2";
+	//Parametros para conectar no MYSQL em meu computador
+	private static String URL = "jdbc:mysql://localhost:3306/Avaliativo02";
 	private static String USER = "root";
 	private static String PASSWORD = "root";
 	
@@ -17,6 +18,7 @@ public class DatabaseConection {
 		}
 	}
 	public static Connection getConnection() throws SQLException {
+		//Faz a conexão
 		return DriverManager.getConnection(URL,USER,PASSWORD);
 	}
 		

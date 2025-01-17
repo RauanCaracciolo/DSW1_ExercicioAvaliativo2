@@ -19,5 +19,6 @@
 		<button type="submit">Cadastrar</button>
 	</form>
 	<a href="adm.jsp">Voltar a tela de admim</a>
+
 </body>
 </html>

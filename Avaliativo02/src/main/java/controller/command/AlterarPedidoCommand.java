@@ -22,11 +22,12 @@ public class AlterarPedidoCommand implements Command {
 			String descricao = request.getParameter("descricao");
 			
 			try {
+				//Altera o pedido
 				base.alter(id, new Pedido(id, nome, endereco, valor, descricao));
 			}catch(Exception ex) {
 				ex.printStackTrace();
 			}
-			response.sendRedirect("pedido.jsp");
+			request.getRequestDispatcher("alterarPedido.jsp").forward(request, response);
 			return null;
 	}
 
